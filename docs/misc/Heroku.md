@@ -40,7 +40,7 @@ curl -s https://api.github.com/repos/usefathom/fathom/releases/latest \
   | grep linux_amd64.tar.gz \
   | cut -d '"' -f 4 \
   | wget -qi - -O- \
-  | tar --directory bin -xz - fathom
+  | tar --directory bin -xz fathom
 ```
 
 * create the Procfile for Heroku
@@ -92,7 +92,7 @@ heroku run fathom --version
 * add the first user
 
 ```bash
-heroku run fathom user add --email="test@test.com" --password="test_password"
+heroku run fathom user register --email="test@test.com" --password="test_password"
 ```
 
 * open the browser to login and add your first website
